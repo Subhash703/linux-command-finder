@@ -76,27 +76,39 @@ export const storeProducts = [
       },
       {
         option:'-e : expiredate',
-        optionDescription:"The date on which the user account will be disabled. Th e date is specified in the format YYYY-MM-DD, empty date will set to 'never'."
+        optionDescription:"The date on which the user account will be disabled. The date format is YYYY-MM-DD, empty date will set to 'never'."
       },
       {
         option:'-g : GID',
-        optionDescription:"The group name or number of the user's new initial login group. The group must exist"
+        optionDescription:"Changing group to which user belongs, it can be done either using GID or name of new group."
       },
       {
         option:'-G',
-        optionDescription:`A list of supplementary group which the user is also a member of each group is separated from nect by comma. `
+        optionDescription:`Assign Supplementary Groups `
+      },
+      {
+        option:'-s',
+        optionDescription:`Change login shell, it can be seen as /etc/shells`
       },
       {
         option:'-L',
         optionDescription:"Lock a user's password. This puts '!' in front of the encrypted password"
+      },
+      {
+        option:'-U',
+        optionDescription:"Unlock user"
+      },
+      {
+        option:'-l',
+        optionDescription:"Change Login Name of user"
       },
       {
         option:'-p : password',
         optionDescription:"The encrypted password, as returned by crypt. Eg : 'usermod -p 'openssl passwd' user'"
       },
       {
-        option:'-L',
-        optionDescription:"Lock a user's password. This puts '!' in front of the encrypted password"
+        option:'-u',
+        optionDescription:"Change UID"
       },
     ]
   },
@@ -123,27 +135,21 @@ export const storeProducts = [
     id: 6,
     command: "useradd",
     title: "useradd - create a new user or update default new user information",
-    img: "img/tesla_car_6.png",
     
     info:
-      `When invoked without the -D option, the useradd command creates a new user
-      account using the values specified on the command line plus the default
-      values from the system. Depending on command line options, the useradd
-      command will update system files and may also create the new user's home
-      directory and copy initial files.
+      ` useradd command in linux is used to add a new user in the system. In other words, it creates a new login account for a different user. But, only the root user can user useradd command in linux.
 
-      By default, a group will also be created for the new user (see -g, -N, -U,
-      and USERGROUPS_ENAB).`,
+      By default, a group will also be created for the new user.`,
     options:[
       {
         option:'-c',
-        optionDescription:`--comment COMMENT
-        Any text string. It is generally a short description of the login, and
-        is currently used as the field for the user's full name.`
+        optionDescription:` useradd Steve -c "Steve Smith"
+        Any text string. It is generally a short description of the login`
       },
       {
         option:'-d',
-        optionDescription:`The new user will be created using HOME_DIR as the value for the user's login directory. The default is to append the LOGIN name to BASE_DIR and use that as the login directory name.`
+        optionDescription:`useradd David -d "/home/DW"
+        option creates a home directory with a name and path of your choice. By default the home directory is created in /home directory with the same name as the user’s name.`
       },
       {
         option:'-e',
@@ -157,6 +163,10 @@ export const storeProducts = [
         useradd User3 -G User1		=> User1 is suplimentry group of User3
         -check : nano /etc/group
         `
+      },
+      {
+        option:'-g',
+        optionDescription:`useradd David -g 1008 => Assign a GID of choice -check : nano /etc/group`
       },
       {
         option:'-p',
