@@ -16,11 +16,18 @@ function Options(options) {
               Show More
             </div>
             {showMore ? 
-                <ul>
-                    {options.item.map(ele=>{
-                    return <li key={Math.random()}><span className="option">{ele.option} </span> <span className="optionDescription">{ele.optionDescription}</span></li>
-                    })}
-                </ul>: null
+            <div className="outer">
+                {options.item.map(ele=>{
+                 return <div key={Math.random()}        className="option-wrapper">
+                    <div className="option">
+                        {ele.option}
+                    </div>
+                    <div className="optionDescription">
+                        {ele.optionDescription}
+                    </div>
+                </div>
+                })}
+            </div>:null
             }
         </div>
         

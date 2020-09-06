@@ -48,6 +48,7 @@ input[type="text"]{
   padding: 0.4rem 1rem;
   border: 2px solid #111319;
   background-color: #02dfd4;
+  border-radius: 3px;
 }
 
 
@@ -68,7 +69,7 @@ img{
 }
 
 .more{
-  width: 30%;
+  width: 200px;
   padding: 0.5rem 1rem;
   color: #fff;
   background-color: #111319;
@@ -78,31 +79,26 @@ img{
   cursor: pointer;
 }
 
-ul{
-  list-style: none;
-  padding: 1em 1em;
-  margin: 1rem;
-}
-ul li{
-  /* height: 4rem; */
-  padding: 1rem 1rem;
-  color: #fff;
-  background-color: #1119159c;
-  margin-top: 1rem;
+.option-wrapper{
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.4em 1em;
+  margin: 1rem;
+  color: #fff;
+  background-color: #0100769c;
+  margin-top: 0.6rem;
   border-radius: .4em;
   line-height: 2rem;
-
 }
-ul li .option{
-  margin: 0.2rem 1rem;
-  color: #fff;
-  font-size: 1.2em;
-  /* width: 200px; */
+.option{
+  flex: 1;
+  color: #15e0e0;
+  font-weight: 600;
 }
 .optionDescription{
+  flex: 6;
   margin-left: 2rem;
   font-size: 1em;
 }
+

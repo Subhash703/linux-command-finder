@@ -6,7 +6,6 @@ export const storeProducts = [
     id: 1,
     command: "tty",
     title: "This command is used to show the current logged in users",
-    img: "img/tesla_car_1.png",
     info:
       "tty - print the file name of the terminal connected to standard input",
     options:[
@@ -153,7 +152,7 @@ export const storeProducts = [
       },
       {
         option:'-e',
-        optionDescription:`he date on which the user account will be disabled. The date is
+        optionDescription:`The date on which the user account will be disabled. The date is
         specified in the format YYYY-MM-DD.`
       },
       {

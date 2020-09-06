@@ -19,7 +19,16 @@ function App() {
   }
   const [searchby, setSearchby] = useState('commandName');
   
-  const res = storeProducts.filter(item => item.command.toLowerCase().indexOf(query.toLowerCase())!==-1);
+  const res = storeProducts.filter(item => {
+    let search = item.command;
+    if(searchby=="commandTitle"){
+      search = item.title;
+    }
+    if(searchby=="commandInfo"){
+      search = item.info;
+    }
+    return search.toLowerCase().indexOf(query.toLowerCase())!==-1
+  });
 
   return (
     <div className="container">
@@ -37,7 +46,7 @@ function App() {
           }}
           >
             <option value="commandName">Command Name</option>
-            <option value="optionName">Command options</option>
+            <option value="commandInfo">Command information</option>
             <option value="commandTitle">Command Title</option>
           </select>
         </div>
